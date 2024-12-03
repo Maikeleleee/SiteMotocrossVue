@@ -1,4 +1,7 @@
 <template>
+   <div class="bg-red-500 text-white p-4">
+    Ceci est un test pour Tailwind CSS.
+  </div>
   <div class="flex justify-center items-center h-screen">
     <!-- Conteneur principal -->
     <div class="relative w-96">
