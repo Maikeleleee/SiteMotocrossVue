@@ -1,16 +1,13 @@
 <template>
-   <div class="bg-red-500 text-white p-4">
-    Ceci est un test pour Tailwind CSS.
-  </div>
   <div class="flex justify-center items-center h-screen">
     <!-- Conteneur principal -->
-    <div class="relative w-96">
+    <div class="relative mx-auto" style="max-width: 300px; width: calc(1ch * 28);">
       <!-- Barre de recherche -->
       <input
         type="text"
         v-model="recherche"
         placeholder="Recherchez un département"
-        class="border p-2 w-full"
+        class="border p-3 w-full text-lg"
         @focus="afficherListe = true"
         @blur="masquerListe"
       />
@@ -22,7 +19,7 @@
         <li
           v-for="departement in departementsFiltres"
           :key="departement.code"
-          class="p-2 hover:bg-gray-200 cursor-pointer text-center"
+          class="p-2 hover:bg-gray-200 cursor-pointer"
           @mousedown.prevent="naviguerVersDepartement(departement)"
         >
           {{ departement.code }} - {{ departement.nom }}
@@ -173,15 +170,37 @@ export default {
 </script>
 
 <style scoped>
+/* Barre de recherche et liste déroulante alignées */
+.relative {
+  margin: 0 auto; /* Centrer horizontalement */
+  max-width: 300px; /* Limite la largeur maximale */
+  width: calc(1ch * 28); /* Ajuste la largeur pour correspondre au texte le plus long */
+}
+
+
+input {
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 8px;
+  width: 100%; /* Toujours s'adapter à la largeur du conteneur */
+  box-sizing: border-box;
+}
+
+
 ul {
   list-style: none; /* Supprime les puces */
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Alignement avec l'input */
 }
 
 li {
   cursor: pointer; /* Change le curseur en pointer */
-  text-align: center; /* Centre le texte dans la liste */
+  text-align: left; /* Alignement du texte */
   transition: background-color 0.2s ease; /* Animation douce */
+}
+
+.hover\:bg-gray-200:hover {
+  background-color: #e2e8f0; /* Couleur au survol */
 }
 </style>

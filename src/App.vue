@@ -1,8 +1,10 @@
 <template>
-  <div id="app">
-    <Header /> <!-- Barre de navigation -->
-    <router-view /> <!-- Contenu des pages -->
-    <Footer /> <!-- Pied de page -->
+  <div>
+    <Header />
+    <main class="container" style="padding-bottom: 50px;">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -11,17 +13,10 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 
 export default {
+  name: 'App',
   components: {
     Header,
     Footer,
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-</style>
