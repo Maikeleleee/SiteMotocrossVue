@@ -4,9 +4,9 @@ import Departements from '../views/Departements.vue';
 import Circuits from '../views/Circuits.vue';
 
 const routes = [
-  { path: '/', component: Home }, // Page d'accueil
-  { path: '/departements', component: Departements }, // Liste des départements
-  { path: '/departements/:id', component: Circuits }, // Circuits d'un département
+  { path: '/', component: Home },
+  { path: '/departements', component: Departements },
+  { path: '/circuits', component: Circuits },
 ];
 
 const router = createRouter({
